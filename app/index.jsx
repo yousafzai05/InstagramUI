@@ -1,17 +1,16 @@
-// app/index.jsx
 import { useEffect, useRef, useState } from 'react';
 import {
-    Animated,
-    Dimensions,
-    FlatList,
-    Image,
-    Modal,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View
+  Animated,
+  Dimensions,
+  FlatList,
+  Image,
+  Modal,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
 
 const { width, height } = Dimensions.get('window');
@@ -40,7 +39,6 @@ const posts = [
     postImage: require('../assets/images/post1.jpg'),
     likes: 2350,
     caption: '"With great power comes great responsibility"',
-    comments: 25,
     time: '3 hours ago',
   },
   {
@@ -51,7 +49,6 @@ const posts = [
     postImage: require('../assets/images/post2.jpg'),
     likes: 1800,
     caption: '“When you die, I will be the one writing your name in my Death Note.”',
-    comments: 18,
     time: '5 hours ago',
   },
   {
@@ -62,7 +59,6 @@ const posts = [
     postImage: require('../assets/images/post3.jpg'),
     likes: 3100,
     caption: '“I have set myself to become the King of the Pirates… and if I die trying… then at least I tried!”',
-    comments: 32,
     time: '7 hours ago',
   },
   {
@@ -73,7 +69,6 @@ const posts = [
     postImage: require('../assets/images/post4.jpg'),
     likes: 450,
     caption: 'Exploring the city streets. Every corner tells a story.',
-    comments: 8,
     time: '12 hours ago',
   },
   {
@@ -84,7 +79,6 @@ const posts = [
     postImage: require('../assets/images/post5.jpg'),
     likes: 1200,
     caption: 'Avengers, assemble!',
-    comments: 15,
     time: '1 day ago',
   },
 ];
@@ -300,9 +294,6 @@ const PostCard = ({ post }) => {
         <Text style={styles.caption}>
           <Text style={styles.usernameText}>{post.username}</Text> {post.caption}
         </Text>
-        {post.comments > 0 && (
-          <Text style={styles.comments}>View all {post.comments} comments</Text>
-        )}
         <Text style={styles.time}>{post.time}</Text>
       </View>
     </View>
@@ -690,11 +681,6 @@ const styles = StyleSheet.create({
   },
   usernameText: {
     fontWeight: '600',
-  },
-  comments: {
-    fontSize: 14,
-    color: '#8e8e8e',
-    marginTop: 2,
   },
   time: {
     fontSize: 10,
